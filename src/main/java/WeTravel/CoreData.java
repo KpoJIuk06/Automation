@@ -85,6 +85,32 @@ public class CoreData {
     public WebElement getTripTitle(){
         return driver.findElement(By.id("trip-title"));
     }
+    public WebElement getTripOffered(){
+        return driver.findElement(By.id("trip_offer"));
+    }
+    public WebElement setSelectOffer(){
+        return driver.findElement(By.xpath("//*[@id=\"trip_offer\"]/option[2]"));
+    }
+
+    public WebElement getSearchPhoto(){
+        return driver.findElement(By.id("search_photo"));
+    }
+    public WebElement setSearchPhoto(){
+        return driver.findElement(By.xpath("//*[@id=\"__filestack-picker\"]/div/div/div[1]/div[2]/div[2]/div/div/div[1]/form/input"));
+    }
+    public WebElement setSearchPhotoButton(){
+        return driver.findElement(By.xpath("//div [@class='fsp-icon fsp-image-search__submit-icon']"));
+    }
+    public WebElement setSearchPhotoElement(){
+        return driver.findElement(By.xpath("//div [@class='fsp-grid__cell fsp-grid__cell--thumbnail'][3]"));
+    }
+    public WebElement getViewSelectedPhoto(){
+        return driver.findElement(By.xpath("//span[@class='fsp-button fsp-button--primary']"));
+    }
+    public WebElement getSelectedUploadPhoto(){
+        return driver.findElement(By.xpath("//span[@class='fsp-button fsp-button--primary fsp-button-upload']"));
+    }
+
 
 
     public void switchToNewTab() {

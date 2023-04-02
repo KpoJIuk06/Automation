@@ -27,13 +27,14 @@ public class MainFlow {
 
             if (createTripSuccess) {
              TripBasics tripBasics = new TripBasics(driver);
-
+             boolean tripBasicssuccess = false;
+             try {
+                 tripBasicssuccess = tripBasics.performActions();
+             } catch (InterruptedException e){
+                 e.printStackTrace();
+             }
                 // Continue with the rest of your flow
-            } else {
-                // Handle the case where CreateTrip failed
             }
-        } else {
-            // Handle the case where LogIn failed
         }
     }
     public static void main(String[] args) {
