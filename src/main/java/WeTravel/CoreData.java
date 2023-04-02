@@ -65,10 +65,10 @@ public class CoreData {
     }
 
     public WebElement setEndDateInput(){
-        return driver.findElement(By.xpath("//*[@id=\"__next\"]/div[4]/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div[2]/div[2]/div/div[2]/div/table/tbody/tr/td[contains(text(), '22')]"));
+        return driver.findElement(By.xpath("//td[@class='CalendarDay CalendarDay_1 CalendarDay__default CalendarDay__default_2'][2]"));
     }
     public WebElement setStartDateInput() {
-        return driver.findElement(By.xpath("//*[@id=\"__next\"]/div[4]/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div[2]/div[2]/div/div[2]/div/table/tbody/tr/td[contains(text(), '14')]"));
+        return driver.findElement(By.xpath("//td[@class='CalendarDay CalendarDay_1 CalendarDay__default CalendarDay__default_2 CalendarDay__today CalendarDay__today_3']"));
     }
     public void myMethod() throws InterruptedException {
         Thread.sleep(2000);
@@ -110,7 +110,21 @@ public class CoreData {
     public WebElement getSelectedUploadPhoto(){
         return driver.findElement(By.xpath("//span[@class='fsp-button fsp-button--primary fsp-button-upload']"));
     }
-
+    public WebElement getGroupMinimum(){
+        return driver.findElement(By.id("group_size_min"));
+    }
+    public WebElement setGroupMinimum(){
+        return driver.findElement(By.xpath("//*[@id=\"group_size_min\"]/option[3]"));
+    }
+    public WebElement getGroupMaximum() {
+        return driver.findElement(By.id("group_size_max"));
+    }
+    public WebElement setGroupMaximum(){
+        return driver.findElement(By.xpath("//*[@id=\"group_size_max\"]/option[2]"));
+    }
+    public WebElement getPrivateCurrentClick(){
+        return driver.findElement(By.xpath("//label [@class='wt-text trip-privacy__label trip-privacy__label--active']"));
+    }
 
 
     public void switchToNewTab() {
