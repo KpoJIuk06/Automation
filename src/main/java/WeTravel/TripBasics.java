@@ -30,7 +30,7 @@ public class TripBasics {
         TripBasics.getSelectedUploadPhoto().click();
         TripBasics.myMethod();
 
-
+        //komit
         return true;
 
     }
