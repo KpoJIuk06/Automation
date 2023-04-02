@@ -2,7 +2,7 @@ package WeTravel;
 
 import org.openqa.selenium.WebDriver;
 
-import javax.swing.tree.TreePath;
+
 
 public class TripBasics {
     private final WebDriver driver;
@@ -29,9 +29,15 @@ public class TripBasics {
         TripBasics.myMethod();
         TripBasics.getSelectedUploadPhoto().click();
         TripBasics.myMethod();
+        TripBasics.getGroupMinimum().click();
+        TripBasics.setGroupMinimum().click();
+        TripBasics.getGroupMaximum().click();
+        TripBasics.setGroupMaximum().click();
+        TripBasics.getPrivateCurrentClick().click();
+        TripBasics.myMethod();
+        TripBasics.getNextButton().click();
 
-        //komit
-        //komit2
+
         return true;
 
     }
