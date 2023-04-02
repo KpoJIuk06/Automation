@@ -31,6 +31,7 @@ public class TripBasics {
         TripBasics.myMethod();
 
         //komit
+        //komit2
         return true;
 
     }
