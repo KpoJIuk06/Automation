@@ -14,11 +14,14 @@ public class Google {
 
         // Create ChromeOptions object
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         // Set the window size
         options.addArguments("start-maximized");
+        options.addArguments("--remote-debugging-port=9222");
+        //options.setCapability("maxSession", 1);
         // Create a new instance of the ChromeDriver
         //WebDriver driver = new ChromeDriver(options);
-        WebDriver driver = new RemoteWebDriver(new URL("https://6bb1-37-26-18-160.ngrok.io"), options);
+        WebDriver driver = new RemoteWebDriver(new URL("https://9c53-37-26-18-160.ngrok.io/"), options);
         CoreData Google = new CoreData(driver);
         driver.get(CoreData.getGooglePage());
         //driver.quit();

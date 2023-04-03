@@ -38,7 +38,7 @@ try {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     signInPage.getSignInButton().click();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    signInPage.getEmailField().sendKeys("o.ramhhivdsa@mail.ru");
+    signInPage.getEmailField().sendKeys("o.raqqwmiz@mail.ru");
     signInPage.getNextButton().click();
     //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -51,7 +51,7 @@ try {
     driver.quit();
 }
 catch (Exception exception){
-    takeSnapShot(driver,"s1.jpg");
+    takeSnapShot(driver,"s2.jpg");
 }
         //
 
