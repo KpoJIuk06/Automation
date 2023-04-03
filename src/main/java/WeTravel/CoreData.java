@@ -39,6 +39,9 @@ public class CoreData {
        public  static String getSignInPage(){
         return "https://www.wetravel.com/";
     }
+    public static String getGooglePage(){
+        return "https://www.google.com/";
+    }
     public WebElement getSignUpButton(){
         return driver.findElement(By.xpath("//*[@id=\"__next\"]/div[3]/div/div[2]/div/div/div[10]/div/a"));
     }
