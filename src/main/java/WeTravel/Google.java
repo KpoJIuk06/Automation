@@ -21,7 +21,7 @@ public class Google {
         //options.setCapability("maxSession", 1);
         // Create a new instance of the ChromeDriver
         //WebDriver driver = new ChromeDriver(options);
-        WebDriver driver = new RemoteWebDriver(new URL("https://9c53-37-26-18-160.ngrok.io/"), options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://172.105.104.218:4444/"), options);
         CoreData Google = new CoreData(driver);
         driver.get(CoreData.getGooglePage());
         //driver.quit();
