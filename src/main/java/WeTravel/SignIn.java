@@ -25,10 +25,10 @@ public class SignIn {
         options.addArguments("--remote-allow-origins=*");
         // Set the window size
         options.addArguments("--window-size=1920,1080");
-        //options.addArguments("start-maximized");
+        options.addArguments("start-maximized");
         // Create a new instance of the ChromeDriver
-        //WebDriver driver = new ChromeDriver(options);
-        WebDriver driver = new RemoteWebDriver(new URL("https://6bb1-37-26-18-160.ngrok.io"), options);
+        WebDriver driver = new ChromeDriver(options);
+        //WebDriver driver = new RemoteWebDriver(new URL("https://6bb1-37-26-18-160.ngrok.io"), options);
         driver.manage().window().maximize();
 try {
 
@@ -38,7 +38,7 @@ try {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     signInPage.getSignInButton().click();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    signInPage.getEmailField().sendKeys("o.raqqwmiz@mail.ru");
+    signInPage.getEmailField().sendKeys("o.raqqw123miz@mail.ru");
     signInPage.getNextButton().click();
     //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

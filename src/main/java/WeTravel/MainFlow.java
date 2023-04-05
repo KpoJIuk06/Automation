@@ -13,7 +13,7 @@ public class MainFlow {
 
     public void run() {
         LogIn login = new LogIn();
-        boolean loginSuccess = login.performActions(driver);
+        boolean loginSuccess = login.perform(driver, null);
 
         if (loginSuccess) {
             CreateTrip createTrip = new CreateTrip(driver);
