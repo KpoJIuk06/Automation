@@ -26,16 +26,18 @@ public class StepStart {
     private String currentWindow;
 
     @BeforeClass
-    public void setupDriver() throws MalformedURLException {
+    @Parameters("server_linode")
+    public void setupDriver(String server_linode) throws MalformedURLException {
 
         // Create ChromeOptions object
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         // Set the window size
         options.addArguments("start-maximized");
+        options.addArguments("--disable-dev-shm-usage");
         // Create a new instance of the ChromeDriver
         //driver = new ChromeDriver(options);
-        driver = new RemoteWebDriver(new URL("http://172.105.104.218:4444/"), options);
+        driver = new RemoteWebDriver(new URL((server_linode)), options);
         CoreData Google = new CoreData(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
@@ -52,7 +54,7 @@ public class StepStart {
     public void weTravelLoginPage(String email){
         LogIn logIn = new LogIn();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Assert.assertTrue(logIn.perform(driver, email));
+        Assert.assertTrue(logIn.perform(driver));
     }
     @Step
     public void simpleGooglePage(){

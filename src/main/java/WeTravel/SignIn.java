@@ -25,10 +25,11 @@ public class SignIn {
         options.addArguments("--remote-allow-origins=*");
         // Set the window size
         options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("start-maximized");
         // Create a new instance of the ChromeDriver
-        WebDriver driver = new ChromeDriver(options);
-        //WebDriver driver = new RemoteWebDriver(new URL("https://6bb1-37-26-18-160.ngrok.io"), options);
+        //WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://172.105.104.218:4444"), options);
         driver.manage().window().maximize();
 try {
 
@@ -38,20 +39,21 @@ try {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     signInPage.getSignInButton().click();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    signInPage.getEmailField().sendKeys("o.raqqw123miz@mail.ru");
+    signInPage.getEmailField().sendKeys("o.raqqwkkjkj123miz@mail.ru");
     signInPage.getNextButton().click();
     //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     signInPage.getFirstNameField().sendKeys("Ramiz");
     signInPage.getLastNameField().sendKeys("Omarov");
-    signInPage.getPasswordField().sendKeys("A123456!");
+    signInPage.getPasswordField().sendKeys("0000");
     //signInPage.getKeepLogIn().click();
     signInPage.getSignUpButton().click();
     // signInPage.getFirstNameField().send("Ramiz");
+    takeSnapShot(driver,"s301.jpg");
     driver.quit();
 }
 catch (Exception exception){
-    takeSnapShot(driver,"s2.jpg");
+    takeSnapShot(driver,"s3.jpg");
 }
         //
 

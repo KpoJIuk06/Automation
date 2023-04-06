@@ -2,6 +2,7 @@
 
 <suite name="WeTravel" verbose="1">
     <parameter name="email" value="o.ramiz@mail.ru"/>
+    <parameter name="server_linode" value="http://172.105.104.218:4444"/>
     <test name="alphaUIRegressionChrome">
         <classes>
             <class name="com.tests.StepStart"/>
