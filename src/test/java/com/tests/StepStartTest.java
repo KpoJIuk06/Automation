@@ -2,6 +2,7 @@ package com.tests;
 
 import WeTravel.*;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -42,13 +43,27 @@ public class StepStartTest {
 
     @Test
     @Parameters("email")
-    public void CreateAccountandTrip(String email) throws InterruptedException {
+    public void firstStepLoginTest(String email) throws InterruptedException {
         //simpleGooglePage();
         weTravelLoginPage(email);
+
+
+    }
+    @Test (dependsOnMethods = {"firstStepLoginTest"})
+    public void secondStepCreateTripTest() throws InterruptedException{
         createTripStart();
+
+    }
+    @Test (dependsOnMethods = {"secondStepCreateTripTest"})
+    public void thrirdStepTripBasicTest() throws InterruptedException{
         createTripBasics();
 
     }
+    @Test (dependsOnMethods = {"thrirdStepTripBasicTest"})
+    public void fourthStepTripDescTest() throws InterruptedException{
+        descriptionData();
+    }
+
 
     @Step
     public void weTravelLoginPage(String email) throws InterruptedException {
@@ -56,7 +71,7 @@ public class StepStartTest {
         Assert.assertTrue(logIn.perform(driver));
     }
     @Step
-    public void simpleGooglePage(){
+    public void simpleGooglePage() throws InterruptedException {
         Google simplePage = new Google();
         Assert.assertTrue(simplePage.perform(driver));
     }
@@ -67,9 +82,14 @@ public class StepStartTest {
 
     }
     @Step
-    public void createTripStart(){
+    public void createTripStart() throws InterruptedException{
         CreateTrip tripStart = new CreateTrip();
         Assert.assertTrue(tripStart.perform(driver));
+    }
+    @Step
+    public void descriptionData() throws InterruptedException{
+        TripDescription descData = new TripDescription();
+        Assert.assertTrue(descData.perform(driver));
     }
 
 

@@ -15,10 +15,12 @@ public class CreateTrip {
 //    public CreateTrip(WebDriver driver) {
 //        this.driver = driver;
 //    }
-    public boolean perform(WebDriver driver)  {
+    public boolean perform(WebDriver driver) throws InterruptedException {
         CoreData CreateTrip = new CoreData(driver);
-
-        CreateTrip.getInputDestination().sendKeys("Toronto");
+        CreateTrip.myMethod();
+        CreateTrip.getInputDestination().sendKeys("Торонто, Онтарио, Канада");
+        CreateTrip.myMethod();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         CreateTrip.getNextStep().click();
         CreateTrip.getStartDateInput().click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
