@@ -35,8 +35,8 @@ public class StepStartTest {
         options.addArguments("start-maximized");
         options.addArguments("--disable-dev-shm-usage");
         // Create a new instance of the ChromeDriver
-        driver = new ChromeDriver(options);
-        //driver = new RemoteWebDriver(new URL((server_linode)), options);
+        //driver = new ChromeDriver(options);
+        driver = new RemoteWebDriver(new URL((server_linode)), options);
         CoreData Google = new CoreData(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
