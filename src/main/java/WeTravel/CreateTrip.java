@@ -10,22 +10,23 @@ import org.openqa.selenium.interactions.Actions;
 import java.time.Duration;
 
 public class CreateTrip {
-    private final WebDriver driver;
+    //private final WebDriver driver;
 
-    public CreateTrip(WebDriver driver) {
-        this.driver = driver;
-    }
-    public boolean performActions() throws InterruptedException {
+//    public CreateTrip(WebDriver driver) {
+//        this.driver = driver;
+//    }
+    public boolean perform(WebDriver driver)  {
         CoreData CreateTrip = new CoreData(driver);
 
         CreateTrip.getInputDestination().sendKeys("Toronto");
         CreateTrip.getNextStep().click();
         CreateTrip.getStartDateInput().click();
-        CreateTrip.myMethod();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         CreateTrip.setStartDateInput().click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         CreateTrip.getEndDateInput().click();
-        CreateTrip.myMethod();
-        CreateTrip.setEndDateInput().click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        CreateTrip.setStartDateInput().click();
         CreateTrip.getNextButtonSchedule().click();
         CreateTrip.getPrivateClickLabel().click();
         CreateTrip.getSeeTripNextClick().click();

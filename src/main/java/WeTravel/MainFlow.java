@@ -16,30 +16,30 @@ public class MainFlow {
     }
 
     public void run() {
-        LogIn login = new LogIn();
-        boolean loginSuccess = login.perform(driver);
-
-        if (loginSuccess) {
-            CreateTrip createTrip = new CreateTrip(driver);
-            boolean createTripSuccess = false;
-            try {
-                createTripSuccess = createTrip.performActions();
-            } catch (InterruptedException e) {
-                // Handle the exception here, e.g. log the error
-                e.printStackTrace();
-            }
-
-            if (createTripSuccess) {
-             TripBasics tripBasics = new TripBasics(driver);
-             boolean tripBasicssuccess = false;
-             try {
-                 tripBasicssuccess = tripBasics.performActions();
-             } catch (InterruptedException e){
-                 e.printStackTrace();
-             }
-                // Continue with the rest of your flow
-            }
-        }
+//        LogIn login = new LogIn();
+//        boolean loginSuccess = login.perform(driver);
+//
+//        if (loginSuccess) {
+//            CreateTrip createTrip = new CreateTrip(driver);
+//            boolean createTripSuccess = false;
+//            try {
+//                createTripSuccess = createTrip.performActions();
+//            } catch (InterruptedException e) {
+//                // Handle the exception here, e.g. log the error
+//                e.printStackTrace();
+//            }
+//
+//            if (createTripSuccess) {
+//             TripBasics tripBasics = new TripBasics(driver);
+//             boolean tripBasicssuccess = false;
+//             try {
+//                 tripBasicssuccess = tripBasics.perform();
+//             } catch (InterruptedException e){
+//                 e.printStackTrace();
+//             }
+//                // Continue with the rest of your flow
+//            }
+//        }
     }
     public static void main(String[] args) throws MalformedURLException {
         // Create ChromeOptions object

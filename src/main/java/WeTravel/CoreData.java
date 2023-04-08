@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 //import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 public class CoreData {
@@ -68,10 +70,11 @@ public class CoreData {
     }
 
     public WebElement setEndDateInput(){
-        return driver.findElement(By.xpath("//td[@class='CalendarDay CalendarDay_1 CalendarDay__default CalendarDay__default_2'][2]"));
+        return driver.findElement(By.xpath("//td[contains(@aria-label, \"It’s available.\")][2]"));
     }
+
     public WebElement setStartDateInput() {
-        return driver.findElement(By.xpath("//td[@class='CalendarDay CalendarDay_1 CalendarDay__default CalendarDay__default_2 CalendarDay__today CalendarDay__today_3']"));
+        return driver.findElement(By.xpath("//td[contains(@aria-label, \"It’s available.\")][6]"));
     }
     public void myMethod() throws InterruptedException {
         Thread.sleep(2000);
@@ -127,6 +130,9 @@ public class CoreData {
     }
     public WebElement getPrivateCurrentClick(){
         return driver.findElement(By.xpath("//label [@class='wt-text trip-privacy__label trip-privacy__label--active']"));
+    }
+    public  WebElement getNextButtonTrip(){
+        return driver.findElement(By.xpath("//a[contains(text(), 'Next')]"));
     }
 
 

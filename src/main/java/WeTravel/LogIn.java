@@ -10,7 +10,7 @@ public class LogIn {
 
 
 
-    public boolean perform(WebDriver driver) {
+    public boolean perform(WebDriver driver)throws InterruptedException {
         CoreData LoginPage = new CoreData(driver);
         //driver.get(CoreData.getGooglePage());
         driver.get("https://www.wetravel.com/");
@@ -26,7 +26,7 @@ public class LogIn {
         LoginPage.getClickCheckButton().click();
         LoginPage.getLoginButton().click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        LoginPage.openCreateYourTripInNewTab();
+        LoginPage.getCreateYourTrip().click();
         return true;
     }
 
