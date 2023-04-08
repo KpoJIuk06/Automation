@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Google {
     //public static void main(String[] args) throws MalformedURLException {
-    public boolean perform(WebDriver driver){
+    public boolean perform(WebDriver driver) throws InterruptedException{
 
 
         // Create ChromeOptions object

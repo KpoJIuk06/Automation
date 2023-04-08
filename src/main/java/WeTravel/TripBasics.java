@@ -1,8 +1,10 @@
 package WeTravel;
 
 //import org.apache.logging.log4j.core.Core;
+import org.apache.logging.log4j.core.Core;
 import org.openqa.selenium.WebDriver;
 
+import javax.swing.tree.TreePath;
 import java.time.Duration;
 
 
@@ -22,6 +24,7 @@ public class TripBasics {
         TripBasics.setSelectOffer().click();
         TripBasics.getTripOffered().click();
         TripBasics.getSearchPhoto().click();
+        TripBasics.myMethod();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         TripBasics.setSearchPhoto().sendKeys("Cats");
         TripBasics.setSearchPhotoButton().click();
@@ -32,6 +35,7 @@ public class TripBasics {
         TripBasics.myMethod();
         TripBasics.getSelectedUploadPhoto().click();
         TripBasics.myMethod();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         TripBasics.getGroupMinimum().click();
         TripBasics.myMethod();
         TripBasics.setGroupMinimum().click();

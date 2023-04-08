@@ -54,7 +54,7 @@ public class CoreData {
         return driver.findElement(By.xpath("//a[@class='wt-button wt-button--orange wt-button--md topmenu__button--create']"));
     }
     public WebElement getInputDestination(){
-        return  driver.findElement(By.xpath("(//input[@placeholder=\"What's the destination?\"])"));
+        return  driver.findElement(By.xpath("//*[@id='location']"));
     }
     public  WebElement getClickCheckButton(){
         return driver.findElement(By.xpath("(//label[contains(text(), 'Keep me logged in')])[1]"));
@@ -129,10 +129,14 @@ public class CoreData {
         return driver.findElement(By.xpath("//*[@id=\"group_size_max\"]/option[2]"));
     }
     public WebElement getPrivateCurrentClick(){
-        return driver.findElement(By.xpath("//label [@class='wt-text trip-privacy__label trip-privacy__label--active']"));
+            return driver.findElement(By.xpath("//label [@class='wt-text trip-privacy__label trip-privacy__label--active']"));
     }
     public  WebElement getNextButtonTrip(){
         return driver.findElement(By.xpath("//a[contains(text(), 'Next')]"));
+    }
+
+    public WebElement getTripDescriptionAbout(){
+        return driver.findElement(By.xpath("//*[@class='notranslate public-DraftEditor-content']"));
     }
 
 
