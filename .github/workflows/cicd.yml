@@ -17,5 +17,15 @@ jobs:
         with:
           java-version: 11
 
+      - name: Install Allure command-line tool
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install allure
+
       - name: Build and run tests with Maven
         run: mvn clean verify
+
+      - name: Generate Allure report
+        run: allure generate --clean && allure open
+        working-directory: target/site/allure-results
